@@ -36,6 +36,7 @@ UnsplashAPI (Conforming to UnsplashAPIProtocol):
 + fetchLocationImage(for location: String) async throws -> UIImage
 
 BucketListViewController:
++ bucketLists: [Activity]?
 + init(diContainer: DIContainer)
 + viewDidLoad()
 + generateBucketList()
