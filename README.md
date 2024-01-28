@@ -45,6 +45,24 @@ BucketList:
 
 Activity:
 + init(/* properties of an activity */)
+
+CoreDataManagerProtocol:
++ init()
++ save(bucketList: BucketList) async
++ fetchBucketList() async -> [BucketList]
+
+NetworkCallerProtocol:
++ init()
++ fetchData<T: Decodable>(from url: URL) async throws -> T
+
+ChatGPTAPIProtocol:
++ init(networkCaller: NetworkCallerProtocol)
++ fetchActivityIdeas(for location: String) async throws -> [Activity]
+
+UnsplashAPIProtocol:
++ init(networkCaller: NetworkCallerProtocol)
++ fetchLocationImage(for location: String) async throws -> UIImage
+
 ```
 ## Client-side Components
 
