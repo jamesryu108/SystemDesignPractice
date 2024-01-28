@@ -16,6 +16,7 @@ DIContainer:
 + chatGPTAPI: ChatGPTAPIProtocol
 + unsplashAPI: UnsplashAPIProtocol
 + makeBucketListViewController() -> BucketListViewController
++ fetchAllActivities(string:)
 
 CoreDataManager (Conforming to CoreDataManagerProtocol):
 + init()
