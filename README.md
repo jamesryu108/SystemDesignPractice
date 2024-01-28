@@ -8,7 +8,7 @@ This application allows users to create personalized bucket lists based on their
 
 ## Client Public API
 
-`DIContainer:
+```DIContainer:
 + init()
 + coreDataManager: CoreDataManagerProtocol
 + networkCaller: NetworkCallerProtocol
@@ -45,8 +45,7 @@ BucketList:
 
 Activity:
 + init(/* properties of an activity */)
-`
-
+```
 ## Client-side Components
 
 * NetworkCaller
