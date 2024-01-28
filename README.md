@@ -6,6 +6,47 @@ This application allows users to create personalized bucket lists based on their
 
 ![Screenshot 2024-01-27 at 20 29 16](https://github.com/jamesryu108/SystemDesignPractice/assets/33236626/9bc53a79-8924-47f4-a867-10232c98e7d5)
 
+## Client Public API
+
+DIContainer:
++ init()
++ coreDataManager: CoreDataManagerProtocol
++ networkCaller: NetworkCallerProtocol
++ chatGPTAPI: ChatGPTAPIProtocol
++ unsplashAPI: UnsplashAPIProtocol
++ makeBucketListViewController() -> BucketListViewController
+
+CoreDataManager (Conforming to CoreDataManagerProtocol):
++ init()
++ save(bucketList: BucketList) async
++ fetchBucketList() async -> [BucketList]
+
+NetworkCaller (Conforming to NetworkCallerProtocol):
++ init()
++ fetchData<T: Decodable>(from url: URL) async throws -> T
+
+ChatGPTAPI (Conforming to ChatGPTAPIProtocol):
++ init(networkCaller: NetworkCallerProtocol)
++ fetchActivityIdeas(for location: String) async throws -> [Activity]
+
+UnsplashAPI (Conforming to UnsplashAPIProtocol):
++ init(networkCaller: NetworkCallerProtocol)
++ fetchLocationImage(for location: String) async throws -> UIImage
+
+BucketListViewController:
++ init(diContainer: DIContainer)
++ viewDidLoad()
++ generateBucketList()
+
+// Supporting Models
+
+BucketList:
++ init(/* properties of a bucket list */)
+
+Activity:
++ init(/* properties of an activity */)
+
+
 ## Client-side Components
 
 * NetworkCaller
