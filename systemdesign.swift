@@ -85,6 +85,8 @@ final class BucketListViewController: UIViewController {
     var chatGPTAPI: ChatGPTAPIProtocol?
     var unsplashAPI: UnsplashAPIProtocol?
 
+    private var bucketLists: [Activity]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Setup UI and functionality
@@ -92,7 +94,7 @@ final class BucketListViewController: UIViewController {
 
     @objc func generateBucketList() async {
         // Implement the logic to generate a bucket list using async/await
-        let activity = try? await chatGPTAPI?.fetchActivityIdeas(for: "")
+        bucketLists = try? await chatGPTAPI?.fetchActivityIdeas(for: "toronto")
     }
 }
 
