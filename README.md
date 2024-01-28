@@ -27,6 +27,8 @@ This application allows users to create personalized bucket lists based on their
 
 * DIContainer
   - A container that manages all dependencies.
+  - `DIContainer` acts as a central point where all dependencies are managed. This centralization makes it easier to see what is needed in the application.
+  - With `DIContainer`, adding or modifying dependencies becomes much simpler and does not require significant changes in multiple places in the codebase. 
   - Provides instances of `CoreDataManager`, `NetworkCaller`, `ChatGPTAPI` and `UnsplashAPI`.
   - These dependencies are injected via the initializer of BucketListViewController. (It passes the protocols that these dependencies conform to, in order to decouple these dependencies from the view controller.)
 
