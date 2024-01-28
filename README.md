@@ -4,7 +4,7 @@
 
 This application allows users to create personalized bucket lists based on their location preferences. It fetches activity ideas and location images from private external APIs and manages the fetched activity ideas in internal storage. (Core Data)
 
-![Screenshot 2024-01-27 at 20 29 16](https://github.com/jamesryu108/SystemDesignPractice/assets/33236626/9bc53a79-8924-47f4-a867-10232c98e7d5)
+![Screenshot 2024-01-28 at 15 15 52](https://github.com/jamesryu108/SystemDesignPractice/assets/33236626/98b0c66f-6668-4d81-9138-a5f23c868126)
 
 ## Client Public API
 
@@ -16,7 +16,7 @@ DIContainer:
 + chatGPTAPI: ChatGPTAPIProtocol
 + unsplashAPI: UnsplashAPIProtocol
 + makeBucketListViewController() -> BucketListViewController
-+ fetchAllActivities(string:)
++ fetchAllActivities(string:, networkCaller: NetworkCallerProtocol)
 
 CoreDataManager (Conforming to CoreDataManagerProtocol):
 + init()
